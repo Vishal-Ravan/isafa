@@ -59,7 +59,7 @@ HOME PAGE 2 AREA CSS
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #003566;
+  background-color: #174f2b;
   z-index: 77777;
 }
 #loader {
@@ -535,7 +535,7 @@ header {
  z-index: 9;
 }
 .haeder-home1 .header.sticky{
-  background: #003566;
+  background: #174f2b;
 }
 .header-home2 .header.sticky{
   background: #070F3E;
@@ -621,7 +621,7 @@ a.menu-toggle.full span.bars {
   font-family: 'Commissioner', sans-serif;
 }
 .contact-3 a:hover{
-  background: #112437;
+  background: #174f2b;
   color: #fff;
   transition: all .4s ease-in-out;
 }
@@ -968,14 +968,14 @@ span.welcome-border {
   padding: 6px 12px;
 }
 .all-3-btn a:hover {
-  background: #112437;
+  background: #174f2b;
   color: #fff;
   transition: all .4s ease-in-out;
   transform: translateY(-5px);
 }
 
 .all-3-btn a:hover span svg {
-  color: #112437;
+  color: #174f2b;
   transition: all .4s ease-in-out;
 }
 .completed {
@@ -1241,7 +1241,7 @@ img.npath-img {
  object-fit: cover;
 }
 .about-btn:hover{
-  background: #003566;
+  background: #174f2b;
   transition: all .4s ease-in-out;
   color: #fff;
   transform: translateY(-5px);
@@ -1357,7 +1357,7 @@ strike.svg-angel {
 
 /*----===========SERVICE AREA CSS----============*/
 .service-section-area {
- background: #003566;
+ background: #174f2b;
 }
 .service-imges {
  margin-bottom: 30px;
@@ -1521,7 +1521,7 @@ strike.svg-angel {
  /* top: 0; */
  z-index: -2;
  transition: all.3s;
- background: #112437;
+ background: #174f2b;
  opacity: 0.88;
  border-radius: 10px;
  bottom: 0;
@@ -1546,7 +1546,7 @@ transition: all .4s ease;
 -moz-transition:all .4s ease;
 -ms-transition:all .4s ease;
 transition: all .4s ease;
- background: #112437;
+ background: #174f2b;
  opacity: 0.88;
  border-radius: 5px;
  z-index: 2;
@@ -1582,7 +1582,7 @@ transition: all .4s ease;
  margin-bottom: 50px;
 }
 .service-section-3-area{
-  background: #112437;
+  background: #174f2b;
   border-radius: 60px;
 }
 .border-1 {
@@ -1604,7 +1604,7 @@ transition: all .4s ease;
   line-height: 12px;
 }
 .service-3-text-area {
-  border: 1px solid #294057;
+  border: 1px solid #ffffff;
   border-radius: 10px;
   padding: 35px 25px 25px 25px;
   transition: all .4s ease-in-out;
@@ -1618,7 +1618,9 @@ transition: all .4s ease;
 .service-3-text-area h1 {
   margin-bottom: 14px;
 }
-
+.mt-top{
+  margin-top: 20px;
+}
 .service-3-text-area p {
   margin-bottom: 28px;
 }
@@ -1629,7 +1631,7 @@ transition: all .4s ease;
   transform: rotate(-30deg);
 }
 .service-3-text-area.hover-bg {
-  background: #2D3F50;
+  background: #d24204;
   transition: all .4s ease-in-out;
 }
 .service-3-text-area.hover-bg a span{
@@ -1646,7 +1648,7 @@ transition: all .4s ease;
   transition: all .4s ease-in-out;
 }
 .service-3-text-area:hover{
-  background: #2D3F50;
+  background: #d24204;
   transition: all .4s ease-in-out;
 }
 .service-3-text-area:hover img{
@@ -1697,7 +1699,7 @@ transition: all .4s ease;
  text-align: center;
  border: 1px solid #CCEBFF;
  border-radius: 50%;
- color:  #112437;
+ color:  #174f2b;
  text-align: center;
  transition: all.3s ease-in-out;
 } 
@@ -1709,7 +1711,7 @@ transition: all .4s ease;
  border: 1px solid #CCEBFF;
  border-radius: 50%;
  margin: 0 8px;
- color:  #112437;
+ color:  #174f2b;
  text-align: center;
  transition: all .4s ease-in-out;
 }
@@ -2179,7 +2181,7 @@ color: #fff;
 }
 .service-carousel-img::after {
  content: "";
- background: #112437;
+ background: #174f2b;
  position: absolute;
  width: 100%;
  height: 100%;
@@ -2324,7 +2326,7 @@ img.cpath1-img {
  object-fit: cover;
 }
 .client-btn:hover{
-  background: #003566;
+  background: #174f2b;
   transition: all .4s ease-in-out;
   color: #fff;
 }
@@ -2466,7 +2468,7 @@ ul.plans-card li {
  font-family: 'Rubik', sans-serif;
 }
 .blus-btn a {
- background: #003566;
+ background: #174f2b;
  color: #fff;
 }
 
@@ -2475,7 +2477,7 @@ ul.plans-card li {
  color: #fff;
 }
 .pricing-card:hover {
- background: #003566;
+ background: #174f2b;
  color: #fff;
  transition: all .4s ease-in-out;
 }
@@ -2500,7 +2502,7 @@ ul.plans-card li {
  position: relative;
 }
 .best h2 {
- background: #003566;
+ background: #174f2b;
  height: 70px;
  width: 70px;
  display: inline-block;
@@ -2514,7 +2516,7 @@ ul.plans-card li {
 }
 .pricing-card:hover .best h2{
  background: #fff;
- color:#003566 ;
+ color:#174f2b ;
  transition: all .4s ease-in-out;
 }
 .best h2 {
@@ -2569,7 +2571,7 @@ img.cpath4 {
  width: 40px;
  line-height: 40px;
  text-align: center;
- border: 1px solid #003566;
+ border: 1px solid #174f2b;
  border-radius: 50%;
  color:  #085855;
  transition: all.3s ease-in-out;
@@ -2579,19 +2581,19 @@ img.cpath4 {
  width: 40px;
  line-height: 40px ;
  text-align: center;
- border: 1px solid #003566;
+ border: 1px solid #174f2b;
  border-radius: 50%;
  margin: 0 8px;
  color:  #085855;
  transition: all .4s ease-in-out;
 }
 .testimonial-text-area .owl-nav button.owl-next:hover{
- background: #003566;
+ background: #174f2b;
  color: #fff;
  transition: all .4s ease-in-out;
 }
 .testimonial-text-area .owl-nav button.owl-prev:hover{
- background: #003566;
+ background: #174f2b;
  color: #fff;
  transition: all .4s ease-in-out;
 }
@@ -2777,7 +2779,7 @@ img.cpath4 {
  color: #fff;
 }
 .testimonial-words-quito img.qutio{
- width: 34px;
+ width: 34px !important;
  height: 30px;
  object-fit: cover;
 }
@@ -2797,7 +2799,7 @@ img.cpath4 {
  transition: all.3s ease-in-out;
  margin-left: 14px;
  transition: all .4s ease-in-out;
- color: #112437;
+ color: #174f2b;
 }
 img.white-line-img {
   filter: brightness(0) invert(1);
@@ -2937,7 +2939,7 @@ img.white-line-img {
 
 /*----===========BLOG AREA CSS----============*/
 .blog-section-area{
- background: #003566;
+ background: #174f2b;
 }
 .blog-text{
  margin-bottom: 60px;
@@ -3024,7 +3026,7 @@ img.white-line-img {
  border-radius: 10px 10px 5px 5px;
 }
 .latest-blog-starts{
- background: #112437;
+ background: #174f2b;
 border-radius: 60px;
 }
 .latest-blog-area img {
@@ -3058,7 +3060,7 @@ border-radius: 60px;
  margin-top: 20px;
 }
 .latest-flex-text span {
- border: 2px solid #112437;
+ border: 2px solid #174f2b;
  height: 24px;
  width: 24px;
  text-align: center;
@@ -3560,14 +3562,16 @@ a.allservice.white-1:hover::after{
   border: none;
   background: none;
   outline: none;
+  background-color: #fff;
+  padding: 16px 39px;
+  border-radius: 100px;
   width: 100%;
 }
 
 .location-form form {
-  background: #fff;
-  width: 412px;
-  padding: 16px 39px;
   border-radius: 30px;
+  display: flex;
+  width: 100%;
 }
 .location-form {
   display: flex;
@@ -3575,6 +3579,7 @@ a.allservice.white-1:hover::after{
 }
 .other-btn {
   margin-left: 14px;
+  width: 50%;
 }
 .location-form form input::placeholder {
   font-family: 'Roboto', sans-serif;
@@ -3737,7 +3742,7 @@ form.border-5 {
 
 /*----===========FOOTER AREA CSS----============*/
 .footer-section-area{
- background: #003566;
+ background: #174f2b;
 }
 .epower-con a:hover{
  color: #fff;
@@ -3886,7 +3891,7 @@ ul.social-links {
  color: #3AB449;
 }
 .phn-setails a {
- padding-left: 10px;
+ padding-left: 5px;
 }
 .location-area a:hover {
  color:#3AB449 ;
@@ -3917,7 +3922,7 @@ ul.social-links {
  text-align: center;
  line-height: 36px;
  border-radius: 50%;
- color: #112437;
+ color: #174f2b;
  font-size: 16px;
  transition: all .4s ease-in-out;
 }
@@ -3980,7 +3985,7 @@ ul.copyright-menu li a:hover {
   background: #38B000;
 }
 .main-menu-ex.dropdown-shadow.homepage-3 ul li ul li a:hover::after{
-  background: #112437;
+  background: #174f2b;
 }
 .main-menu-ex.dropdown-shadow.homepage-4 ul li ul li a:hover::after{
   background: #F23936;
@@ -4065,10 +4070,10 @@ ul.social-links ul li a:hover {
   margin-top: 13px;
 } */
 .brand-images-area {
- padding-left: 65px;
+ /* padding-left: 65px; */
 }
 .brand-section-area-2{
-  background: #112437;
+  background: #174f2b;
 }
 .brand-images-area-1 {
   display: flex;
@@ -4100,7 +4105,7 @@ ul.social-links ul li a:hover {
   display: flex;
 }
 .counter-author-area{
-  background: #112437;
+  background: #174f2b;
 }
 .counter-author-per {
   display: flex;
@@ -4217,7 +4222,7 @@ a.allservice.white{
 .download-pdf button::after{
   position: absolute;
   content: "";
-  background: #112437;
+  background: #174f2b;
   width:100%;
   z-index: -1;
   height:0;
@@ -4476,7 +4481,7 @@ a.allservice.white{
 .arrow-btn span {
  width: 28px;
  height: 28px;
- border: 2px solid #112437;
+ border: 2px solid #174f2b;
  display: inline-block;
  line-height: 25px;
  text-align: center;
@@ -4579,7 +4584,7 @@ ul.font-author-links li a {
   border: 1px solid #DEEDFC;
   line-height: 40px;
   border-radius: 50%;
-  color:  #112437;
+  color:  #174f2b;
   transition: all .4s ease-in-out;
 }
 
@@ -4988,7 +4993,7 @@ span.current {
 }
 .theme-btn-11:hover {
   color: #ffffff;
-  background: #112437;
+  background: #174f2b;
   transition: all 0.3s;
   transform: translateY(-3px);
 }
@@ -6004,4 +6009,12 @@ a.allservice.white {
 }
 .latest-blog-area.latest-author-text {
   padding: 20px;
+} .aboutwelcdome-scetion-area.d{
+  background-image: url(../img/bg/BANNER.jpg) ;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 215px 0 115px;
 }

@@ -1317,46 +1317,102 @@
               <h1 class="font-28 font-cm lineh-38 color-11 weight-600">
                 Become a Member Today
               </h1>
-              <div class="contact-textarea">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="input-area">
-                      <input type="text" placeholder="Full Name*" />
-                      <div class="border-7"></div>
+          
+              <form id="memberForm">
+                <div class="contact-textarea">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="input-area">
+                        <input type="text" name="name" placeholder="Full Name*" required />
+                        <div class="border-7"></div>
+                      </div>
                     </div>
-                  </div>
-
-                  <div class="col-lg-12">
-                    <div class="input-area">
-                      <input type="email" placeholder="Email Adderss*" />
-                      <div class="border-7"></div>
+          
+                    <div class="col-lg-12">
+                      <div class="input-area">
+                        <input type="email" name="email" placeholder="Email Address*" required />
+                        <div class="border-7"></div>
+                      </div>
                     </div>
-                  </div>
-
-                  <div class="col-lg-12">
-                    <div class="input-area">
-                      <input
-                        type="phone"
-                        placeholder="Enter Your Phone Number*"
-                      />
-                      <div class="border-7"></div>
+          
+                    <div class="col-lg-12">
+                      <div class="input-area">
+                        <input
+                          type="tel"
+                          name="mobile"
+                          placeholder="Enter Your mobile Number*"
+                          pattern="\d{10,}"
+                          required
+                        />
+                        <div class="border-7"></div>
+                      </div>
                     </div>
-                  </div>
-
-                  <div class="col-lg-12">
-                    <div class="all-3-btn">
-                      <a
-                        href="#"
-                        class="font-cm font-16 lineh-24 weight-600 color d-inline-block margin-t50"
-                        >Submit
-                        <span><i class="fa-solid fa-arrow-right"></i></span
-                      ></a>
+          
+                    <div class="col-lg-12">
+                      <div class="all-3-btn">
+                        <button
+                          type="submit"
+                          class="font-cm font-16 lineh-24 weight-600 color d-inline-block margin-t50"
+                        >
+                          Submit
+                          <span><i class="fa-solid fa-arrow-right"></i></span>
+                        </button>
+                      </div>
+                    </div>
+          
+                    <div class="col-lg-12">
+                      <div id="memberMessage" style="margin-top: 15px; font-weight: 600;"></div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
+          
+          <script>
+            document.getElementById("memberForm").addEventListener("submit", async function (e) {
+              e.preventDefault();
+          
+              const name = this.name.value.trim();
+              const email = this.email.value.trim();
+              const mobile = this.mobile.value.trim();
+              const messageBox = document.getElementById("memberMessage");
+          
+              if (!/^\d{10,}$/.test(mobile)) {
+                messageBox.innerText = "❌ mobile number must be at least 10 digits.";
+                messageBox.style.color = "red";
+                return;
+              }
+          
+              const formData = { name, email, mobile };
+          
+              try {
+                const response = await fetch('https://cms.cmai.wat-s.app/api/collections/your_member_collection/records', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(formData)
+                });
+          
+                const result = await response.json();
+          
+                if (response.ok) {
+                  messageBox.innerText = "✅ Membership request submitted!";
+                  messageBox.style.color = "green";
+                  this.reset();
+                } else {
+                  messageBox.innerText = "❌ Failed to submit: " + (result.message || "Try again.");
+                  messageBox.style.color = "red";
+                }
+              } catch (error) {
+                console.error("Error:", error);
+                messageBox.innerText = "❌ Something went wrong!";
+                messageBox.style.color = "red";
+              }
+            });
+          </script>
+          
         </div>
       </div>
     </div>
@@ -1375,17 +1431,20 @@
           <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
             <div class="cta-contact-form">
               <div class="location-form">
-                <form action="#">
-                  <input type="email" placeholder="Enter Your Email">
-                </form>
-                <div class="other-btn">
-                  <div class="all-3-btn text-center">
-                    <button type="submit" class="font-cm font-16 lineh-24 weight-600 color">Subscribe <span><i
-                          class="fa-solid fa-arrow-right"></i></span></button>
-                    <!-- <a href="contact.html" class=" font-roboto font-16 lineh-24 weight-600 color d-inline-block ">Subscribe <span><i class="fa-solid fa-arrow-right"></i></span></a> -->
+                <form id="subscribeForm">
+                  <input type="email" name="email" placeholder="Enter Your Email" required>
+                  <div class="other-btn">
+                    <div class="all-3-btn text-center">
+                      <button type="submit" class="font-cm font-16 lineh-24 weight-600 color">
+                        Subscribe <span><i class="fa-solid fa-arrow-right"></i></span>
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </form>
+                <!-- Message will appear here -->
               </div>
+              <div id="subscribeMessage" style="margin-top: 10px; font-weight: 600;"></div>
+    
             </div>
           </div>
           <div class="col-lg-12">
@@ -1415,7 +1474,7 @@
           </div>
           <div class="col-lg-2"></div>
           <div class="col-lg-3">
-            <div class="phn-setails">
+            <div class="phn-setails mt-top">
               <span> <img src="assets/img/icons/phn.png" alt=""></span>
               <a href="tel:+919811779580"
                 class="font-roboto font-16 lineh-26 weight-400 color-11 margin-b d-inline-block">+91 98117 79580 /</a>
@@ -1552,5 +1611,88 @@
       });
       
     </script>
+        <script>
+          document.getElementById("subscribeForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+        
+            const email = this.email.value.trim();
+            const messageBox = document.getElementById("subscribeMessage");
+        
+            if (!email) {
+              messageBox.innerText = "❌ Please enter a valid email.";
+              messageBox.style.color = "red";
+              return;
+            }
+        
+            try {
+              const response = await fetch('https://cms.cmai.wat-s.app/api/collections/isafa_subscription_submits/records', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+              });
+        
+              const result = await response.json();
+        
+              if (response.ok) {
+                messageBox.innerText = "✅ Subscribed successfully!";
+                messageBox.style.color = "green";
+                this.reset();
+              } else {
+                messageBox.innerText = "❌ Failed to subscribe: " + (result.message || "Try again later.");
+                messageBox.style.color = "red";
+              }
+            } catch (error) {
+              console.error("Error:", error);
+              messageBox.innerText = "❌ Something went wrong!";
+              messageBox.style.color = "red";
+            }
+          });
+        </script>
+
+<script>
+  document.getElementById("memberForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const name = this.name.value.trim();
+    const email = this.email.value.trim();
+    const mobile = this.mobile.value.trim();
+    const messageBox = document.getElementById("memberMessage");
+
+    if (!/^\d{10,}$/.test(mobile)) {
+      messageBox.innerText = "❌ mobile number must be at least 10 digits.";
+      messageBox.style.color = "red";
+      return;
+    }
+
+    const formData = { name, email, mobile };
+
+    try {
+      const response = await fetch('https://cms.cmai.wat-s.app/api/collections/isafa_membership_submits/records', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        messageBox.innerText = "✅ Membership request submitted!";
+        messageBox.style.color = "green";
+        this.reset();
+      } else {
+        messageBox.innerText = "❌ Failed to submit: " + (result.message || "Try again.");
+        messageBox.style.color = "red";
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      messageBox.innerText = "❌ Something went wrong!";
+      messageBox.style.color = "red";
+    }
+  });
+</script>
   </body>
 </html>

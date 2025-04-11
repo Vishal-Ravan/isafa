@@ -310,49 +310,58 @@
                 <div class="col-lg-6">
                     <div class="contact-input-area">
                         <h1 class="font-28 font-cm lineh-38 color-11 weight-600">Leave a message</h1>
-                        <div class="contact-textarea">
+                        <form id="contactForm">
+                          <div class="contact-textarea">
                             <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="input-area">
-                                        <input type="text" placeholder="Full Name*">
-                                        <div class="border-7"></div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-lg-12">
-                                    <div class="input-area">
-                                        <input type="email" placeholder="Email Adderss*">
-                                        <div class="border-7"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12">
-                                  <div class="input-area">
-                                      <input type="email" placeholder="Phone Number*">
-                                      <div class="border-7"></div>
-                                  </div>
-                              </div>
-
                               <div class="col-lg-12">
                                 <div class="input-area">
-                                    <input type="text" placeholder="Organization*">
-                                    <div class="border-7"></div>
+                                  <input type="text" name="name" placeholder="Full Name*" required>
+                                  <div class="border-7"></div>
                                 </div>
+                              </div>
+                        
+                              <div class="col-lg-12">
+                                <div class="input-area">
+                                  <input type="email" name="email" placeholder="Email Address*" required>
+                                  <div class="border-7"></div>
+                                </div>
+                              </div>
+                        
+                              <div class="col-lg-12">
+                                <div class="input-area">
+                                  <input type="text" name="phone" placeholder="Phone Number*" required pattern="\d{10,}">
+                                  <div class="border-7"></div>
+                                </div>
+                              </div>
+                        
+                              <div class="col-lg-12">
+                                <div class="input-area">
+                                  <input type="text" name="organization" placeholder="Organization*" required>
+                                  <div class="border-7"></div>
+                                </div>
+                              </div>
+                        
+                              <div class="col-lg-12">
+                                <div class="input-area">
+                                  <textarea name="message" cols="30" rows="10" placeholder="Your Message*" required></textarea>
+                                  <div class="border-7"></div>
+                                </div>
+                              </div>
+                        
+                              <div class="col-lg-12">
+                                <div class="all-3-btn margin-t40">
+                                  <button type="submit" class="font-cm font-16 lineh-24 weight-600 color">
+                                    Send Message <span><i class="fa-solid fa-arrow-right"></i></span>
+                                  </button>
+                                </div>
+                              </div>
                             </div>
-                              
-                                <div class="col-lg-12">
-                                    <div class="input-area">
-                                        <textarea  cols="30" rows="10" placeholder="Your Message*"></textarea>
-                                        <div class="border-7"></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="all-3-btn margin-t40">
-                                      <button type="submit" class="font-cm font-16 lineh-24 weight-600 color"> Send Message <span><i class="fa-solid fa-arrow-right"></i></span></button>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
+                          </div>
+                        </form>
+                        
+                        <!-- Message output box -->
+                        <div id="formMessage" style="margin-top: 20px; font-weight: bold;"></div>
+                        
                         </div>
                     </div>
                 </div>
@@ -379,17 +388,20 @@
       <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
         <div class="cta-contact-form">
           <div class="location-form">
-            <form action="#">
-              <input type="email" placeholder="Enter Your Email">
-            </form>
-            <div class="other-btn">
-              <div class="all-3-btn text-center">
-                <button type="submit" class="font-cm font-16 lineh-24 weight-600 color">Subscribe <span><i
-                      class="fa-solid fa-arrow-right"></i></span></button>
-                <!-- <a href="contact.html" class=" font-roboto font-16 lineh-24 weight-600 color d-inline-block ">Subscribe <span><i class="fa-solid fa-arrow-right"></i></span></a> -->
+            <form id="subscribeForm">
+              <input type="email" name="email" placeholder="Enter Your Email" required>
+              <div class="other-btn">
+                <div class="all-3-btn text-center">
+                  <button type="submit" class="font-cm font-16 lineh-24 weight-600 color">
+                    Subscribe <span><i class="fa-solid fa-arrow-right"></i></span>
+                  </button>
+                </div>
               </div>
-            </div>
+            </form>
+            <!-- Message will appear here -->
           </div>
+          <div id="subscribeMessage" style="margin-top: 10px; font-weight: 600;"></div>
+
         </div>
       </div>
       <div class="col-lg-12">
@@ -419,7 +431,7 @@
       </div>
       <div class="col-lg-2"></div>
       <div class="col-lg-3">
-        <div class="phn-setails">
+        <div class="phn-setails mt-top">
           <span> <img src="assets/img/icons/phn.png" alt=""></span>
           <a href="tel:+919811779580"
             class="font-roboto font-16 lineh-26 weight-400 color-11 margin-b d-inline-block">+91 98117 79580 /</a>
@@ -474,5 +486,93 @@
   <script src="assets/js/plugins/mobilemenu.js"></script>
   <!-- <script src="assets/js/plugins/stellarnav.js"></script> -->
   <script src="assets/js/main.js"></script>
+
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+  
+      const formMessage = document.getElementById('formMessage');
+  
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const phone = this.phone.value.trim();
+      const organization = this.organization.value.trim();
+      const message = this.message.value.trim();
+  
+      // ✅ Phone number validation
+      if (!/^\d{10,}$/.test(phone)) {
+        formMessage.innerText = "❌ Phone number must be at least 10 digits.";
+        formMessage.style.color = "red";
+        return;
+      }
+  
+      const formData = { name, email, phone, organization, message };
+  
+      try {
+        const response = await fetch('https://cms.cmai.wat-s.app/api/collections/isafa_contact_submits/records', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+  
+        const result = await response.json();
+  
+        if (response.ok) {
+          formMessage.innerText = "✅ Message sent successfully!";
+          formMessage.style.color = "green";
+          this.reset();
+        } else {
+          formMessage.innerText = "❌ Failed to send message: " + (result.message || "Please try again.");
+          formMessage.style.color = "red";
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        formMessage.innerText = "❌ Something went wrong!";
+        formMessage.style.color = "red";
+      }
+    });
+  </script>
+    <script>
+      document.getElementById("subscribeForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+    
+        const email = this.email.value.trim();
+        const messageBox = document.getElementById("subscribeMessage");
+    
+        if (!email) {
+          messageBox.innerText = "❌ Please enter a valid email.";
+          messageBox.style.color = "red";
+          return;
+        }
+    
+        try {
+          const response = await fetch('https://cms.cmai.wat-s.app/api/collections/isafa_subscription_submits/records', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+          });
+    
+          const result = await response.json();
+    
+          if (response.ok) {
+            messageBox.innerText = "✅ Subscribed successfully!";
+            messageBox.style.color = "green";
+            this.reset();
+          } else {
+            messageBox.innerText = "❌ Failed to subscribe: " + (result.message || "Try again later.");
+            messageBox.style.color = "red";
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          messageBox.innerText = "❌ Something went wrong!";
+          messageBox.style.color = "red";
+        }
+      });
+    </script>
 </body>
 </html>
