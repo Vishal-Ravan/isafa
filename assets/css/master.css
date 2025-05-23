@@ -3098,6 +3098,7 @@ img.white-line-img {
 }
 .latest-blog-area {
   margin-bottom: 30px;
+  height: 545px;
 }
 .latest-author-text a:hover {
   color: #3ab449;
@@ -6035,6 +6036,7 @@ a.allservice.white {
 }
 .latest-blog-area.latest-author-text {
   padding: 20px;
+  height: auto;
 }
 .aboutwelcdome-scetion-area.d {
   /* background-image: url(../img/bg/BANNER.jpg); */
@@ -6049,6 +6051,7 @@ background: #35821f66;
 .service-3-text-area.hover-bg-2.border-none{
   max-height: 300px;
   height: 100%;
+  margin-bottom: 80px !important;
 }
 
 .member-details-contact{
@@ -6087,4 +6090,8 @@ margin-top: 5px;
     padding: 12px;
     border-radius: 15px;
     background: #e5571a;
+    height: auto;
+}
+.latest-blog-area.latest-author-text.service{
+  height: 200px;
 }
