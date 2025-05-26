@@ -4563,7 +4563,7 @@ a.allservice.white {
 .quito-texts-area {
   border: 1px solid #e1eefb;
   border-radius: 10px;
-  padding: 40px;height: 446px;
+  padding: 40px;height: 506px;
   transition: all 0.4s ease-in-out;
 }
 .mobile-nav-icon.cursor-pointer {
@@ -6094,4 +6094,43 @@ margin-top: 5px;
 }
 .latest-blog-area.latest-author-text.service{
   height: 200px;
+}
+
+.social-icons {
+    position: absolute !important;
+    top: 10px;
+    right: 2%;
+    /* background-color: #d24204; */
+    gap: 30px;
+    display: flex
+;
+    padding: 5px 15px;
+    border-radius: 20px;
+    align-items: center;
+}
+.social-icons a svg{
+  color: #164f2b;
+  font-size: 24px;
+  width: 24px;
+  height: 18px;
+}
+
+
+
+.quito-man img {
+    width: 158px !important;
+}
+.quito-man{
+     width: 260px;
+}
+.quito-texts-area p a{
+  color: #d24204;
+}
+.capt-past{
+  font-size: 12px;
+  font-weight: 500;
+  margin: 12px 0px;
+}
+img.img-fluid.rounded.shadow.first-launch{
+  height: 650px !important;
 }
