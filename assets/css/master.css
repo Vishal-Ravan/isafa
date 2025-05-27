@@ -1295,8 +1295,10 @@ img.experiancepath {
   padding: 0 0 0 35px;
 }
 .author-about-text span.border-1 {
-  border: 1px solid #08121e;
+  border: 1px solid #174e2a;
   border-radius: 30px;
+  background-color: #174e2a;
+  color: #fff;
 }
 .author-about-text span.border-2 {
   border: 1px solid #538b60;
@@ -6133,4 +6135,8 @@ margin-top: 5px;
 }
 img.img-fluid.rounded.shadow.first-launch{
   height: 650px !important;
+}
+
+.vision-image{
+  height: 400px !important;
 }
